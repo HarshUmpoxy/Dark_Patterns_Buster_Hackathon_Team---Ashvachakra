@@ -7,4 +7,4 @@ Our team contains:
  - Rishu Raj Sinha
 
 
-For Acing the Hackathon, Let's do it.
+For Acing the Hackathon.
