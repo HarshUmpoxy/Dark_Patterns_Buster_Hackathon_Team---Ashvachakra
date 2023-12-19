@@ -9,3 +9,5 @@
  - CI/CD pipeline for automation of model training
 
  - React, Redux for state maintainance
+
+Add More
