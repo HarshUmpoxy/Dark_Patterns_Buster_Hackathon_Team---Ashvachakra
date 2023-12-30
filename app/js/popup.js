@@ -21,6 +21,9 @@ function updatePieChart(dpArray) {
   // Get the container element for the chart
   const chartContainer = document.getElementById('darkPatternChart');
   console.log(dpArray);
+  if (chartContainer.childElementCount > 0) {
+    chartContainer.removeChild(chartContainer.firstChild);
+  }
   // Create a new div element for the chart
   const chartDiv = document.createElement('div');
   chartDiv.id = 'apexChart';
@@ -59,6 +62,14 @@ function updatePieChart(dpArray) {
       '#607D8B',
       '#BDBDBD', // Color for 'Other'
     ],
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['white', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+        fontSize: '12px',
+        fontFamily: 'Poppins, sans-serif', // Set the desired font family
+      },
+    },
     responsive: [
       {
         breakpoint: 480,
