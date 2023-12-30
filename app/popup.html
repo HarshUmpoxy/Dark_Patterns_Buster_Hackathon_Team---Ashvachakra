@@ -4,8 +4,9 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
     <link rel="stylesheet" href="css/popup.css" type="text/css">
-
+    <link rel="stylesheet" href="./apexcharts-bundle/dist/apexcharts.css">
     <script src="js/popup.js"></script>
+    <script src="./apexcharts-bundle/dist/apexcharts.js"></script>
 </head>
 
 <body>
@@ -20,10 +21,11 @@
             <p class="number">n/a</p>
         </div>
         <button class="analyze-button" type="button">ANALYZE SITE</button>
-    </div>
+        <canvas id="darkPatternChart" width="200" height="200">Charts: </canvas>
+    </div>    
     <div class="modal-footer">
         <a class="link" href="https://darkpatterns.org">What are dark patterns?</a>
-    </div>
+    </div>    
 </body>
 
 </html>
