@@ -94,7 +94,33 @@ function scrape() {
 
 function highlight(element, type) {
   element.classList.add("insite-highlight");
-
+  let patternClass;
+  switch (type) {
+    case "Sneaking":
+      patternClass = "sneaking-highlight";
+      break;
+    case "Urgency":
+      patternClass = "urgency-highlight";
+      break;
+    case "Misdirection":
+      patternClass = "misdirection-highlight";
+      break;
+    case "Social Proof":
+      patternClass = "social-proof-highlight";
+      break;
+    case "Scarcity":
+      patternClass = "scarcity-highlight";
+      break;
+    case "Obstruction":
+      patternClass = "obstruction-highlight";
+      break;
+    case "Forced Action":
+      patternClass = "forced-action-highlight";
+      break;
+    default:
+      patternClass = "default-highlight";
+  }
+  element.classList.add(patternClass);
   let body = document.createElement("span");
   body.classList.add("insite-highlight-body");
 

@@ -46,8 +46,42 @@
     color: #D8D8D8;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .insite-highlight:hover .insite-highlight-body {
 	visibility: visible;
 	opacity: 1;
 }
+.sneaking-highlight {
+    position: relative;
+    background: #ff6384; 
+  }
+  
+  .urgency-highlight {
+    position: relative;
+    background: #36a2eb; 
+  }
+  
+  .misdirection-highlight {
+    position: relative;
+    background: #ffce56; 
+  }
+  
+  .social-proof-highlight {
+    position: relative;
+    background: #4caf50;
+  }
+  
+  .scarcity-highlight {
+    position: relative;
+    background: #ff9800; 
+  }
+  
+  .obstruction-highlight {
+    position: relative;
+    background: #9c27b0; 
+  }
+  
+  .forced-action-highlight {
+    position: relative;
+    background: #607d8b; 
+  }
+  
