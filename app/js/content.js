@@ -18,7 +18,7 @@ function scrape() {
   // aggregate all DOM elements on the page
   let elements = segments(document.body);
   let filtered_elements = [];
-  let dp_array = new Array(8);
+  let dp_array = [0,0,0,0,0,0,0];
 
   for (let i = 0; i < elements.length; i++) {
     let text = elements[i].innerText.trim().replace(/\t/g, " ");
@@ -70,8 +70,6 @@ function scrape() {
             case "Forced Action":
               dp_array[6]++;
               break;
-            default:
-              dp_array[7]++;
           }
           highlight(elements[element_index], json.result[i]);
           dp_count++;

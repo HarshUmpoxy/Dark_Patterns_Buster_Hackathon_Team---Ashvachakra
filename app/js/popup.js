@@ -20,7 +20,7 @@ window.onload = function () {
 function updatePieChart(dpArray) {
   // Get the container element for the chart
   const chartContainer = document.getElementById('darkPatternChart');
-
+  console.log(dpArray);
   // Create a new div element for the chart
   const chartDiv = document.createElement('div');
   chartDiv.id = 'apexChart';
@@ -36,7 +36,6 @@ function updatePieChart(dpArray) {
       'Scarcity',
       'Obstruction',
       'Forced Action',
-      'Other',
     ],
     series: dpArray,
   };
@@ -45,6 +44,8 @@ function updatePieChart(dpArray) {
   const chartOptions = {
     chart: {
       type: 'pie',
+      width: 600, 
+      height: 400,
     },
     labels: chartData.labels,
     series: chartData.series,
