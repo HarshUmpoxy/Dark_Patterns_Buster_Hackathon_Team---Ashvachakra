@@ -18,6 +18,7 @@ function scrape() {
   // aggregate all DOM elements on the page
   let elements = segments(document.body);
   let filtered_elements = [];
+  let dp_array = new Array(8);
 
   for (let i = 0; i < elements.length; i++) {
     let text = elements[i].innerText.trim().replace(/\t/g, " ");
@@ -47,6 +48,31 @@ function scrape() {
         }
 
         if (json.result[i] !== "Not Dark") {
+          switch(json.result[i]){
+            case "Sneaking":
+              dp_array[0]++;
+              break;
+            case "Urgency":
+              dp_array[1]++;
+              break;
+            case "Misdirection":
+              dp_array[2]++;
+              break;
+            case "Social Proof":
+              dp_array[3]++;
+              break;
+            case "Scarcity":
+              dp_array[4]++;
+              break;
+            case "Obstruction":
+              dp_array[5]++;
+              break;
+            case "Forced Action":
+              dp_array[6]++;
+              break;
+            default:
+              dp_array[7]++;
+          }
           highlight(elements[element_index], json.result[i]);
           dp_count++;
         }
@@ -60,10 +86,10 @@ function scrape() {
       g.style.opacity = 0;
       g.style.position = "fixed";
       document.body.appendChild(g);
-      sendDarkPatterns(g.value);
+      sendDarkPatterns(g.value, dp_array);
     })
     .catch((error) => {
-      alert(error);
+      alert("Backend response error: ",error);
       alert(error.stack);
     });
 }
@@ -91,10 +117,11 @@ function highlight(element, type) {
   element.appendChild(body);
 }
 
-function sendDarkPatterns(number) {
+function sendDarkPatterns(number, dpArray) {
   chrome.runtime.sendMessage({
     message: "update_current_count",
     count: number,
+    dpArray: dpArray
   });
 }
 
